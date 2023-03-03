@@ -1,0 +1,86 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Activity {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  location    String
+  address     String
+  organizer   String
+  startTime   DateTime
+  endTime     DateTime
+  cycle       String?
+  websiteUrl  String?  @default("")
+  class1      String
+  class2      String
+  city        String
+  positionId  String
+  pictureId   String
+  picture     Picture  @relation(fields: [pictureId], references: [id])
+  position    Position @relation(fields: [positionId], references: [id])
+}
+
+model Restaurant {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  address     String
+  phone       String
+  openTime    String
+  websiteUrl  String?  @default("")
+  picture     Picture  @relation(fields: [pictureId], references: [id])
+  position    Position @relation(fields: [positionId], references: [id])
+  class       String?
+  city        String
+  pictureId   String
+  positionId  String
+}
+
+model Hotel {
+  id          String   @id @default(uuid())
+  name        String
+  address     String
+  picture     Picture  @relation(fields: [pictureId], references: [id])
+  phone       String
+  position    Position @relation(fields: [positionId], references: [id])
+  class       String
+  city        String
+  serviceInfo String?
+  websiteUrl  String?  @default("")
+  description String?
+  positionId  String
+  pictureId   String
+}
+
+model Position {
+  id          String       @id @default(uuid())
+  PositionLon Float
+  PositionLat Float
+  GeoHash     String
+  Activity    Activity[]
+  Hotel       Hotel[]
+  Restaurant  Restaurant[]
+}
+
+model Picture {
+  id                  String       @id @default(uuid())
+  PictureUrl1         String?
+  PictureUrl2         String?
+  PictureUrl3         String?
+  PictureDescription1 String?
+  PictureDescription2 String?
+  PictureDescription3 String?
+  Activity            Activity[]
+  Hotel               Hotel[]
+  Restaurant          Restaurant[]
+}
