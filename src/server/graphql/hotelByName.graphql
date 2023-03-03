@@ -1,0 +1,26 @@
+query hotelByName($name: String!) {
+  hotel(name: $name) {
+    id
+    name
+    city
+    description
+    address
+    phone
+    websiteUrl
+    class
+    serviceInfo
+    picture {
+      PictureUrl1
+      PictureDescription1
+      PictureUrl2
+      PictureDescription2
+      PictureUrl3
+      PictureDescription3
+    }
+    position {
+      PositionLon
+      PositionLat
+      GeoHash
+    }
+  }
+}
