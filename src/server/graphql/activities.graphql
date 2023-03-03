@@ -1,0 +1,30 @@
+query getActivities($amount: Int) {
+  activities(amount: $amount) {
+    id
+    name
+    description
+    location
+    address
+    organizer
+    startTime
+    endTime
+    cycle
+    websiteUrl
+    class1
+    class2
+    city
+    picture {
+      PictureUrl1
+      PictureDescription1
+      PictureUrl2
+      PictureDescription2
+      PictureUrl3
+      PictureDescription3
+    }
+    position {
+      PositionLon
+      PositionLat
+      GeoHash
+    }
+  }
+}
