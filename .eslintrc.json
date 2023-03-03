@@ -1,3 +1,28 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb-base",
+    "airbnb-typescript/base",
+    // "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": ["src/server/api.ts"] }],
+    "max-classes-per-file": ["off", { "devDependencies": ["src/server/schema/*.ts"] }],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["@features/*/*", "@components/*/*"]
+      }
+    ]
+  },
+  "plugins": ["simple-import-sort"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  }
 }

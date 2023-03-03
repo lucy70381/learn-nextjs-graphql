@@ -6,22 +6,60 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate": "graphql-codegen"
+  },
+  "prisma": {
+    "schema": "./src/server/prisma/schema.prisma",
+    "seed": "ts-node src/server/prisma/seed.ts"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-regular-svg-icons": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@prisma/client": "^4.5.0",
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "apollo-server-micro": "^3.10.3",
+    "babel-plugin-macros": "^3.1.0",
+    "class-validator": "^0.13.2",
+    "graphql": "^15.8.0",
+    "micro": "^9.3.4",
     "next": "12.3.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-query": "^3.39.2",
+    "reflect-metadata": "^0.1.13",
+    "swiper": "^8.4.4",
+    "type-graphql": "^1.1.1"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^2.13.7",
+    "@graphql-codegen/typescript": "^2.7.4",
+    "@graphql-codegen/typescript-graphql-request": "4.4.5",
+    "@graphql-codegen/typescript-operations": "^2.5.4",
+    "@graphql-codegen/typescript-react-query": "^4.0.2",
     "@types/node": "18.7.18",
     "@types/react": "18.0.20",
     "@types/react-dom": "18.0.6",
+    "@typescript-eslint/parser": "^5.0.0",
     "autoprefixer": "^10.4.11",
     "eslint": "8.23.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-next": "12.3.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "eslint-plugin-tailwindcss": "^3.6.2",
+    "graphql-request": "5.0.0",
+    "graphql-tag": "^2.12.6",
     "postcss": "^8.4.16",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "prisma": "4.5.0",
     "tailwindcss": "^3.1.8",
+    "ts-node": "^10.9.1",
+    "typegraphql-prisma": "^0.22.0",
     "typescript": "4.8.3"
   }
 }
