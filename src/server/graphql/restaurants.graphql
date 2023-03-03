@@ -1,0 +1,20 @@
+query getRestaurants($amount: Int) {
+  restaurants(amount: $amount) {
+    id
+    name
+    description
+    address
+    phone
+    openTime
+    websiteUrl
+    picture {
+      PictureUrl1
+    }
+    position {
+      PositionLon
+      PositionLat
+    }
+    class
+    city
+  }
+}
